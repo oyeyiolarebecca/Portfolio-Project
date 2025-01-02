@@ -1,9 +1,8 @@
-import React from "react";
+import React from 'react'
+import LoginPage from './ui/Auth/Login/Login'
 
-export default function Home() {
+export default function Homepage() {
   return (
-    <div>
-      <h1>This is a Home Page</h1>
-    </div>
-  );
+    <LoginPage/>
+  )
 }
