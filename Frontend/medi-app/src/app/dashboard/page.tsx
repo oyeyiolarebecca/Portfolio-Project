@@ -2,8 +2,8 @@ import React from 'react'
 import AddPatient from '../ui/Dashboard/AddPatient/addPatient'
 import styles from "../ui//Dashboard/Dashboard.module.css"
 import Card from '../ui/Dashboard/Cards/cards';
-// import Chart from '../ui/Dashboard/Chart/Chart';
-// import Table from '../ui/Dashboard/Table/Table';
+import Chart from '../ui/Dashboard/Charts/charts';
+import Table from '../ui/Dashboard/Table/table';
 
 
 export default function Dashboard() {
@@ -17,8 +17,8 @@ export default function Dashboard() {
           <Card />
           <Card />
         </div>
-        {/* <Chart />
-        <Table /> */}
+        <Chart />
+        <Table />
       </div>
     </div>
   )
