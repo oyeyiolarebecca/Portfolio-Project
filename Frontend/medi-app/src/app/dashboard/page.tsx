@@ -1,5 +1,5 @@
 import React from 'react'
-import AddPatient from '../ui/Dashboard/AddPatient/addPatient'
+import SubAddPatient from '../ui/Dashboard/SubAddPatient/subaddPatient'
 import styles from "../ui//Dashboard/Dashboard.module.css"
 import Card from '../ui/Dashboard/Cards/cards';
 import Chart from '../ui/Dashboard/Charts/charts';
@@ -10,7 +10,7 @@ export default function Dashboard() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.main}>
-        <AddPatient />
+        <SubAddPatient />
         <div className={styles.cards}>
           <Card />
           <Card />

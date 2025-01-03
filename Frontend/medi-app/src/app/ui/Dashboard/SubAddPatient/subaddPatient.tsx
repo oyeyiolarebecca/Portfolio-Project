@@ -2,8 +2,9 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { FaRegCalendarAlt, FaPlus } from "react-icons/fa";
 import { CiExport } from "react-icons/ci";
+import Link from 'next/link';
 
-export default function AddPatient() {
+export default function SubAddPatient() {
   return (
     <div className="flex justify-between items-center p-4 bg-white shadow-md rounded-lg">
       <div className="flex items-center space-x-2">
@@ -15,10 +16,12 @@ export default function AddPatient() {
           <CiExport className="text-2xl" />
           <span>Export</span>
         </div>
-        <Button className="flex items-center space-x-1">
+        <Link href={"/dashboard/patients/addPatient"}>
+          <Button className="flex items-center space-x-1">
           <FaPlus className="text-sm" />
-          <span>Create User</span>
+          <span>Add Patient</span>
         </Button>
+        </Link>
       </div>
     </div>
   );

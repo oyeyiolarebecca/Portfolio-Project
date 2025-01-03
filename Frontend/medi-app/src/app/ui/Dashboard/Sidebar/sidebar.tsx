@@ -23,7 +23,7 @@ const menuItems = [
     title: "Main Menu",
     list: [
       { title: "Home", path: "/dashboard", icon: <MdDashboard /> },
-      { title: "Patient", path: "/dashboard/patiences", icon: <MdSupervisedUserCircle /> },
+      { title: "Patients", path: "/dashboard/patients", icon: <MdSupervisedUserCircle /> },
       { title: "Credentials", path: "/dashboard/credentials", icon: <MdShoppingBag /> },
       { title: "Appointments", path: "/dashboard/appointments", icon: <MdEvent /> },
     ],
