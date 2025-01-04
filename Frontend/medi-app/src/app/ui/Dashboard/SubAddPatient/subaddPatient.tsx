@@ -17,7 +17,7 @@ export default function SubAddPatient() {
           <span>Export</span>
         </div>
         <Link href={"/dashboard/patients/addPatient"}>
-          <Button className="flex items-center space-x-1">
+          <Button className="flex items-center space-x-1 btn bg-teal-500 hover:bg-teal-600">
           <FaPlus className="text-sm" />
           <span>Add Patient</span>
         </Button>

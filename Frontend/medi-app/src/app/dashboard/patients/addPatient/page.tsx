@@ -7,14 +7,14 @@ import { Label } from "@/components/ui/label";
 
 export default function AddPatient() {
   return (
-    <div className="container bg-[var(--bgSoft)] p-5 rounded-lg mt-6">
-      <form className="form flex flex-wrap justify-between space-y-4">
+    <div className="container bg-[var(--bgSoft)] p-5 rounded-lg mt-5">
+      <form className="form flex flex-wrap justify-between gap-y-4">
         <div className="w-[45%]">
-          <Label htmlFor="username" className="block text-sm font-medium mb-1">Username</Label>
+          <Label htmlFor="username" className="block text-sm font-medium mb-1">Patient Name</Label>
           <Input
             id="username"
             type="text"
-            placeholder="Username"
+            placeholder="Patient name"
             name="username"
             required
             className="p-3 bg-[var(--bgSoft)] text-[var(--text)] border border-[#d3d3d3] rounded"
@@ -92,7 +92,7 @@ export default function AddPatient() {
         </div>
 
         <div className="w-full">
-          <Button type="submit" className="btn bg-teal-500 text-white w-full p-5 rounded cursor-pointer">
+          <Button type="submit" className="btn bg-teal-500 hover:bg-teal-600 text-white w-full p-5 rounded cursor-pointer">
             Submit
           </Button>
         </div>

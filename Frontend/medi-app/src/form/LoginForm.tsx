@@ -67,7 +67,7 @@ export default function LoginForm(){
   />
                         ))
                     }
-  <Button type="submit">Login</Button>
+  <Button className="bg-teal-500 hover:bg-teal-600 text-white" type="submit">Login</Button>
                 </div>
             </Form>
         </form>

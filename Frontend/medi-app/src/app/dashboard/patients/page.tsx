@@ -8,12 +8,12 @@ import Image from "next/image";
 
 export default function PatientsPage( ) {
   return (
-    <Card className="p-6 space-y-8">
+    <Card className="p-6 space-y-8 mt-2">
       {/* Top section */}
       <div className="flex justify-between items-center">
         <Search placeholder="Search for a user..." />
         <Link href="/dashboard/patients/addPatient">
-          <Button variant="default">Add Patient</Button>
+          <Button className="btn bg-teal-500 hover:bg-teal-600">Add Patient</Button>
         </Link>
       </div>
 
@@ -47,12 +47,12 @@ export default function PatientsPage( ) {
                 </TableCell>
                 <TableCell>
                   <div className="flex space-x-4">
-                    <Link href="/dashboard/patients/Id">
-                      <Button variant="outline" size="sm">
+                    <Link href="/dashboard/patients/id">
+                      <Button className="btn bg-teal-500 hover:bg-teal-600 text-white hover:text-white" variant="outline" size="sm">
                         View
                       </Button>
                     </Link>
-                    <Button variant="destructive" size="sm">
+                    <Button className="hover:bg-red-700" variant="destructive" size="sm">
                       Delete
                     </Button>
                   </div>
