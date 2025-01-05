@@ -47,7 +47,7 @@ const menuItems = [
 
 export default function Sidebar() {
   return (
-    <div className="sidebar bg-white shadow-lg w-80 h-screen flex flex-col sticky top-0">
+    <div className="sidebar bg-white shadow-lg w-80 flex flex-col fixed top-0 left-0">
       {/* Logo Section */}
       <div className="p-4">
         <Image src="/medi.png" alt="logo" width={80} height={80} className="mx-auto" />
@@ -55,9 +55,8 @@ export default function Sidebar() {
       </div>
 
       {/* Menu Section */}
-      <div className="p-4 flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto px-4">
         <Accordion type="multiple" defaultValue={["Main Menu"]}>
-          
           {menuItems.map((cat) => (
             <AccordionItem key={cat.title} value={cat.title}>
               <AccordionTrigger>{cat.title}</AccordionTrigger>

@@ -1,27 +1,23 @@
-import React from 'react'
-import Sidebar from '../ui/Dashboard/Sidebar/sidebar'
+import React from 'react';
+import Sidebar from '../ui/Dashboard/Sidebar/sidebar';
 import Navbar from '../ui/Dashboard/Navbar/navbar';
-import styles from '../ui/Dashboard/Dashboard.module.css';
-import { CardContent,Card } from '@/components/ui/card';
+import { CardContent, Card } from '@/components/ui/card';
 
-
-export default function Layout({children}: {
-    children: React.ReactNode;
-}) {
+export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-<div className='flex'>
-        <Card className='w-[20%]'>
-          <CardContent>
-          <Sidebar/>
-          </CardContent>
-            
-        </Card>
-        <div className={styles.content}>
-            <Navbar/>
-            {children}
-        </div>
-    
+    <div className="flex">
+      {/* Sidebar */}
+      <Card className="w-1/5 h-screen sticky top-0 bg-white shadow-lg">
+        <CardContent>
+          <Sidebar />
+        </CardContent>
+      </Card>
+
+      {/* Main Content */}
+      <div className="w-4/5 p-4">
+        <Navbar />
+        <div className="mt-4">{children}</div>
+      </div>
     </div>
-   
-  )
+  );
 }
