@@ -12,12 +12,11 @@ export default function Home() {
         <meta name="description" content="Making health care better together" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-    <div/>
     
       <header className="bg-white shadow">
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center">
-            <Image src="/logo.png" alt="MedCare Logo" width={50} height={50} />
+            <Image src="/Medi.png" alt="MedCare Logo" width={50} height={50} />
             <h1 className="text-xl font-bold text-blue-600 ml-2">MedCare</h1>
           </div>
           <nav className="flex space-x-4">
