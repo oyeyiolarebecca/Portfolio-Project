@@ -46,7 +46,7 @@ export default function Home() {
             </div>
             <div className="md:w-1/2 mt-8 md:mt-0">
               <Image
-                src="/image.png"
+                src="/Doctor-image.png"
                 alt="Doctor Image"
                 width={900}
                 height={800}
