@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <Head>
         <title>MEDILAB</title>
-        <meta name="description" content="Making health care better together" />
+        <meta name="description" content="Improving health care better together" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
     
@@ -17,7 +17,7 @@ export default function Home() {
         <div className="container mx-auto px-4 py-6 flex justify-between items-center">
           <div className="flex items-center">
             <Image src="/medi.png" alt="Medilab Logo" width={50} height={50} />
-            <h1 className="text-xl font-bold text-blue-600 ml-2">MedCare</h1>
+            <h1 className="text-xl font-bold text-blue-600 ml-2">Medilab</h1>
           </div>
           <nav className="flex space-x-4">
             <a href="#" className="text-gray-700 hover:text-blue-600">Home</a>
@@ -35,7 +35,7 @@ export default function Home() {
             <div className="md:w-1/2 text-center md:text-left">
               <h2 className="text-4xl font-bold text-gray-800">Making Health Care Better Together</h2>
               <p className="text-gray-600 mt-4">
-                Our goal is to bring you the best healthcare services, improving your life every step of the way.
+                Our goal is to provide user-friendly interface for both patients and healthcare professionals
               </p>
               <div className="mt-6 space-x-4">
                 <button className="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700">
@@ -81,7 +81,7 @@ export default function Home() {
 
       <footer className="bg-blue-600 text-white py-6">
         <div className="container mx-auto px-4 text-center">
-          <p>&copy; 2025 MedCare. All Rights Reserved.</p>
+          <p>&copy; 2025 Medilab. All Rights Reserved.</p>
         </div>
       </footer>
     </div>
