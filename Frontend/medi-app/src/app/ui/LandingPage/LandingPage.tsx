@@ -61,17 +61,17 @@ export default function Home() {
         <section className="bg-white py-12">
           <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="text-center">
-              <Image src="/primary-care.png" alt="Primary Care" width={100} height={100} />
+              <Image src="/Primary-care.png" alt="Primary Care" width={100} height={100} />
               <h3 className="text-xl font-bold text-gray-800 mt-4">Primary Care</h3>
               <p className="text-gray-600 mt-2">Comprehensive primary care services for all ages.</p>
             </div>
             <div className="text-center">
-              <Image src="/emergency.png" alt="Emergency Cases" width={100} height={100} />
+              <Image src="/Emergency.png" alt="Emergency Cases" width={100} height={100} />
               <h3 className="text-xl font-bold text-gray-800 mt-4">Emergency Cases</h3>
               <p className="text-gray-600 mt-2">24/7 emergency support and care for urgent needs.</p>
             </div>
             <div className="text-center">
-              <Image src="/online-appointment.png" alt="Online Appointment" width={100} height={100} />
+              <Image src="/online appointment.png" alt="Online Appointment" width={100} height={100} />
               <h3 className="text-xl font-bold text-gray-800 mt-4">Online Appointment</h3>
               <p className="text-gray-600 mt-2">Schedule your appointments conveniently online.</p>
             </div>
