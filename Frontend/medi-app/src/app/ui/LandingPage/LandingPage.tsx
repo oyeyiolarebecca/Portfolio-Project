@@ -22,8 +22,6 @@ export default function Home() {
           <nav className="flex space-x-4">
             <a href="#" className="text-gray-700 hover:text-blue-600">Home</a>
             <a href="#about" className="text-gray-700 hover:text-blue-600">About</a>
-            <a href="#department" className="text-gray-700 hover:text-blue-600">Department</a>
-            <a href="#doctors" className="text-gray-700 hover:text-blue-600">Doctors</a>
             <a href="#contact" className="text-gray-700 hover:text-blue-600">Contact</a>
           </nav>
         </div>
