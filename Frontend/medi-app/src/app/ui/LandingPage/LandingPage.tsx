@@ -48,8 +48,8 @@ export default function Home() {
               <Image
                 src="/image.png"
                 alt="Doctor Image"
-                width={600}
-                height={600}
+                width={900}
+                height={800}
                 className="rounded-lg"
               />
             </div>
