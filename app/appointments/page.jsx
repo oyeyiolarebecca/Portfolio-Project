@@ -22,7 +22,8 @@ export default function AppointmentsPage() {
     })
 
     const columns = [
-        { key: "patient", label: "Patient" },
+        { key: "firstName", label: "Patient's First Name" },
+        { key: "lastName", label: "Patient's Last Name" },
         { key: "doctor", label: "Doctor" },
         { key: "appointmentDate", label: "Date" },
         { key: "appointmentTime", label: "Time" },
