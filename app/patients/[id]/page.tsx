@@ -5,6 +5,10 @@ import { useParams } from 'next/navigation'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Image from 'next/image'
+import { Button } from '@/components/ui/button'
+import { LucideArrowLeft } from 'lucide-react'
+import Link from 'next/link'
 
 const fetchPatientData = async (id: string) => {
     try {
@@ -60,18 +64,26 @@ export default function PatientDetailsPage() {
     }
 
     return (
-        <div className="container mx-auto py-10">
+        <div className="container mx-auto py-10 flex flex-col gap-5">
+            <Button asChild className='w-[50px]'>
+                <Link href={"/patients"}><LucideArrowLeft /></Link>
+
+            </Button>
             <h1 className="text-3xl font-bold mb-6">Patient Details</h1>
             <div className="grid gap-6 md:grid-cols-2">
                 <Card>
                     <CardHeader>
-                        <CardTitle>Personal Information</CardTitle>
+                        <div className='flex justify-between items-center'>
+                            <CardTitle>Personal Information</CardTitle>
+                            <Badge>CLI-{patient.clinicNumber}</Badge>
+                        </div>
+
                     </CardHeader>
                     <CardContent>
                         <div className="flex items-center space-x-4 mb-4">
-                            <img src={'https://github.com/namycodes.png'} alt={patient.patientName} className="w-20 h-20 rounded-full" />
+                            <Image width={100} height={100} src={patient.profilePicture} alt={patient.firstName} className="w-20 h-20 rounded-full" />
                             <div>
-                                <h2 className="text-2xl font-bold">{patient.patientName}</h2>
+                                <h2 className="text-2xl font-bold">{patient.firstName} {patient.lastName}</h2>
                                 <p className="text-muted-foreground">
                                     {patient.age} years old, {patient.gender}
                                 </p>

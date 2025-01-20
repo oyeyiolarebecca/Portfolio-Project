@@ -12,6 +12,7 @@ import { useQuery } from "@tanstack/react-query"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
 import AddDoctorForm from "@/forms/AddDoctor"
 import { fetchAllDoctors } from "@/services/getAllDoctors"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 export default function DoctorsPage() {
 
     const { data, isFetching } = useQuery({
@@ -31,10 +32,13 @@ export default function DoctorsPage() {
 
     const columns = [
         {
-            key: "profilePicture",
+            key: "profilePhoto",
             label: "Photo",
             render: (value) => (
-                <img src={value} alt="Doctor" className="w-10 h-10 rounded-full object-cover" />
+                <Avatar>
+                    <AvatarImage src={value} />
+                    <AvatarFallback>ML</AvatarFallback>
+                </Avatar>
             ),
         },
         { key: "firstName", label: "Firstname" },
