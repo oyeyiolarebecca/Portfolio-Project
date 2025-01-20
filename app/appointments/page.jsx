@@ -22,8 +22,8 @@ export default function AppointmentsPage() {
     })
 
     const columns = [
-        { key: "firstName", label: "Patient's First Name" },
-        { key: "lastName", label: "Patient's Last Name" },
+        { key: "patient", label: "Patient" },
+
         { key: "doctor", label: "Doctor" },
         { key: "appointmentDate", label: "Date" },
         { key: "appointmentTime", label: "Time" },
@@ -54,6 +54,8 @@ export default function AppointmentsPage() {
         // Implement edit functionality
         console.log(`Editing appointment ${id}`)
     }
+
+    console.log("Appointments, ", data)
 
     if (isFetching) {
         return <h1>Loading...</h1>
@@ -102,7 +104,7 @@ export default function AppointmentsPage() {
                                     .filter(appointment => appointment.appointmentDate === selectedDate?.toISOString().split('T')[0])
                                     .map((appointment, index) => (
                                         <li key={index} className="flex items-center justify-between">
-                                            <span>{appointment.appointmentTime} - {appointment.firstName} {patient.lastName}</span>
+                                            <span>{appointment.appointmentTime} - {appointment.patient}</span>
                                             <Badge
                                                 className={appointment.appointmentStatus === "IN_PROGRESS" ? "bg-orange-400" : appointment.appointmentStatus === "FINISHED" ? "bg-green-500" : appointment.appointmentStatus === "CANCELLED" ? "bg-red-600" : appointment.appointmentStatus === "RESCHEDULED" ? "bg-blue-400" : ""}
                                             >
