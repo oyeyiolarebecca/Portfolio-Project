@@ -102,7 +102,7 @@ export default function AppointmentsPage() {
                                     .filter(appointment => appointment.appointmentDate === selectedDate?.toISOString().split('T')[0])
                                     .map((appointment, index) => (
                                         <li key={index} className="flex items-center justify-between">
-                                            <span>{appointment.appointmentTime} - {appointment.patient}</span>
+                                            <span>{appointment.appointmentTime} - {appointment.firstName} {patient.lastName}</span>
                                             <Badge
                                                 className={appointment.appointmentStatus === "IN_PROGRESS" ? "bg-orange-400" : appointment.appointmentStatus === "FINISHED" ? "bg-green-500" : appointment.appointmentStatus === "CANCELLED" ? "bg-red-600" : appointment.appointmentStatus === "RESCHEDULED" ? "bg-blue-400" : ""}
                                             >

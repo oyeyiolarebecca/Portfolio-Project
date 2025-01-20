@@ -89,8 +89,8 @@ export default function AddAppointment() {
                                 </SelectTrigger>
                                 <SelectContent>
                                     {
-                                        patients?.map((patient: { pid: string; patientName: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined }) => (
-                                            <SelectItem key={patient.pid} value={patient.pid}>{patient.patientName}</SelectItem>
+                                        patients?.map((patient: { pid: string; firstName: string; lastName: string; clinicNumber: string | any }) => (
+                                            <SelectItem key={patient.pid} value={patient.pid}>{patient.firstName} {patient.lastName} CLI-{patient.clinicNumber}</SelectItem>
                                         ))
                                     }
                                 </SelectContent>
