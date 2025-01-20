@@ -2,9 +2,16 @@ import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
 const API_URL = process.env.NEXT_PUBLIC_API_URL
 const COOKIE_NAME: any = process.env.NEXT_PUBLIC_COOKIE_NAME
-export async function GET(request: Request, { params }: { params: { patientId: string } }) {
 
-    const { patientId } = await params
+type Props = {
+    params: Promise<{
+        patientId: string
+    }>
+}
+
+export async function GET(request: Request, props: Props) {
+
+    const { patientId } = await props.params
     const cookieStorage = cookies()
     const token = (await cookieStorage).get(COOKIE_NAME)
     console.log(patientId)

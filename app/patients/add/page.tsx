@@ -24,6 +24,9 @@ import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover
 import { CalendarIcon } from "lucide-react"
 import { format } from "path"
 import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { parseISO } from "date-fns"
+
+//TODO: move this schema to zod
 
 const formSchema = z.object({
     firstName: z.string().min(2, {
@@ -180,9 +183,7 @@ export default function AddPatientPage() {
 
                                                 )}
                                             >
-                                                {field.value ? (
-                                                    format(field.value, "PPP")
-                                                ) : (
+                                                {field.value ? <span>{new Date(field.value).toDateString()}</span> : (
                                                     <span>Pick a date</span>
                                                 )}
                                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />

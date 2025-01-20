@@ -17,7 +17,7 @@ const initialMedications = [
 export default function MedicationsPage() {
     const [medications, setMedications] = useState(initialMedications)
 
-    const handleStockChange = (id: number, newStock: number) => {
+    const handleStockChange = (id, newStock) => {
         setMedications(medications.map(medication =>
             medication.id === id ? { ...medication, stock: newStock, available: newStock > 0 } : medication
         ))
@@ -33,7 +33,7 @@ export default function MedicationsPage() {
         {
             key: "stock",
             label: "Stock",
-            render: (value: number, item: any) => (
+            render: (value, item) => (
                 <Input
                     type="number"
                     value={value}
@@ -46,8 +46,8 @@ export default function MedicationsPage() {
         {
             key: "available",
             label: "Status",
-            render: (value: boolean) => (
-                <Badge variant={value ? "success" : "destructive"}>
+            render: (value) => (
+                <Badge variant={value ? "secondary" : "destructive"}>
                     {value ? "Available" : "Out of Stock"}
                 </Badge>
             ),

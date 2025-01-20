@@ -36,7 +36,7 @@ export default function CalendarPage() {
                             onSelect={setSelectedDate}
                             className="rounded-md border"
                             components={{
-                                DayContent: (props) => {
+                                DayContent: (props: any) => {
                                     const matchingEvents = events.filter(
                                         (event) => event.date.toDateString() === props.date.toDateString()
                                     )
@@ -81,7 +81,7 @@ export default function CalendarPage() {
                                                     ? "destructive"
                                                     : event.type === "event"
                                                         ? "default"
-                                                        : "success"
+                                                        : "secondary"
                                             }
                                         >
                                             {event.type}

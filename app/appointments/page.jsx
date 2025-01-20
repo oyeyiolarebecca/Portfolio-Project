@@ -6,21 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Calendar } from "@/components/ui/calendar"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+
 import { useQuery } from "@tanstack/react-query"
-import { getAllPatients } from "@/services/getAllPatients"
 import AddAppointment from "@/forms/AddAppointment"
 import { getAllAppointments } from "@/services/getAllAppointments"
-
-const initialAppointments = [
-    { id: 1, patient: "John Doe", doctor: "Dr. Sarah Johnson", date: "2023-06-15", time: "09:00 AM", status: "Scheduled" },
-    { id: 2, patient: "Jane Smith", doctor: "Dr. Michael Lee", date: "2023-06-15", time: "10:30 AM", status: "Completed" },
-    { id: 3, patient: "Bob Johnson", doctor: "Dr. Emily Chen", date: "2023-06-16", time: "02:00 PM", status: "Cancelled" },
-    // ... more appointments
-]
 
 export default function AppointmentsPage() {
     // const [appointments, setAppointments] = useState(initialAppointments)
