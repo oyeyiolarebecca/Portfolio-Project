@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/hooks/use-toast"
+import Link from "next/link"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog"
+import AddMedicationForm from "@/forms/AddMedication"
 
 const initialMedications = [
     { id: 1, name: "Aspirin", dosage: "100mg", stock: 500, category: "Pain Relief", available: true },
@@ -58,7 +61,19 @@ export default function MedicationsPage() {
         <div className="container mx-auto py-10">
             <div className="flex justify-between items-center mb-6">
                 <h1 className="text-3xl font-bold">Medications</h1>
-                <Button>Add New Medication</Button>
+                 <Dialog>
+                    <DialogTrigger asChild>
+                        <Button>Add New Medication</Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                        <DialogHeader>
+                            <DialogTitle>Add Medication</DialogTitle>
+                            <DialogDescription>Fill in the details to add a new medication.</DialogDescription>
+                        </DialogHeader>
+                        <AddMedicationForm />
+                    </DialogContent>
+                </Dialog>
+
             </div>
             <PaginatedTable data={medications} columns={columns} itemsPerPage={10} />
         </div>
