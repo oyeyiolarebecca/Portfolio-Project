@@ -5,17 +5,22 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useQuery } from "@tanstack/react-query"
 import { getAllPatients } from "@/services/getAllPatients"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const columns = [
     {
-        key: "image",
+        key: "profilePicture",
         label: "Photo",
         render: (value = "https://github.com/namycodes.png") => (
-            <img src={value} alt="Patient" className="w-10 h-10 rounded-full object-cover" />
+            <Avatar>
+                <AvatarImage src={value} />
+                <AvatarFallback >ML</AvatarFallback>
+            </Avatar>
         ),
     },
-    { key: "patientName", label: "Name" },
-    // { key: "age", label: "Age" },
+    { key: "firstName", label: "FirstName" },
+    { key: "lastName", label: "Surname" },
+    { key: "clinicNumber", label: "Clinic Number" },
     { key: "gender", label: "Gender" },
     {
         key: "patientStatus",

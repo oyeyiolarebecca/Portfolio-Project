@@ -15,7 +15,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 
 import { useMutation } from "@tanstack/react-query"
 import { Loader } from "lucide-react"
-import { useEffect, useState } from "react"
+import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react"
 
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -25,8 +25,8 @@ import { z } from "zod"
 export default function AddAppointment() {
 
     const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
-    const { patients } = usePatients()
-    const { doctors } = useDoctors()
+    const { patients }: any = usePatients()
+    const { doctors }: any = useDoctors()
     const form = useForm<z.infer<typeof AppointmentSchema>>({
         resolver: zodResolver(AppointmentSchema),
         defaultValues: {
@@ -89,8 +89,8 @@ export default function AddAppointment() {
                                 </SelectTrigger>
                                 <SelectContent>
                                     {
-                                        patients?.map((patient) => (
-                                            <SelectItem key={patient.pid} value={patient.pid}>{patient.patientName}</SelectItem>
+                                        patients?.map((patient: { pid: string; firstName: string; lastName: string; clinicNumber: string | any }) => (
+                                            <SelectItem key={patient.pid} value={patient.pid}>{patient.firstName} {patient.lastName} CLI-{patient.clinicNumber}</SelectItem>
                                         ))
                                     }
                                 </SelectContent>
@@ -111,8 +111,8 @@ export default function AddAppointment() {
                                 </SelectTrigger>
                                 <SelectContent>
                                     {
-                                        doctors.map(doctor => (
-                                            <SelectItem key={doctor.id} value={doctor.id}>{doctor.firstName} {doctor.lastName}</SelectItem>
+                                        doctors.map((doctor: { id: string; firstName: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined; lastName: string | number | bigint | boolean | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<string | number | bigint | boolean | ReactPortal | ReactElement<unknown, string | JSXElementConstructor<any>> | Iterable<ReactNode> | null | undefined> | null | undefined }) => (
+                                            <SelectItem key={doctor.id} value={doctor.id?.toString()}>{doctor.firstName} {doctor.lastName}</SelectItem>
                                         ))
                                     }
                                 </SelectContent>

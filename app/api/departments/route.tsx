@@ -38,7 +38,7 @@ export async function POST(request: Request) {
     }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
     const cookieStorage = cookies()
     const token = (await cookieStorage).get(COOKIE_NAME)
     if (!token || token.value === undefined) {

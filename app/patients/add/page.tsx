@@ -24,9 +24,15 @@ import { Popover, PopoverTrigger, PopoverContent } from "@radix-ui/react-popover
 import { CalendarIcon } from "lucide-react"
 import { format } from "path"
 import { Select, SelectContent, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { parseISO } from "date-fns"
+
+//TODO: move this schema to zod
 
 const formSchema = z.object({
-    name: z.string().min(2, {
+    firstName: z.string().min(2, {
+        message: "Name must be at least 2 characters.",
+    }),
+    lastName: z.string().min(2, {
         message: "Name must be at least 2 characters.",
     }),
 
@@ -53,7 +59,8 @@ export default function AddPatientPage() {
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            name: "",
+            firstName: "",
+            lastName: "",
             gender: "",
             contact: "",
             address: "",
@@ -63,7 +70,7 @@ export default function AddPatientPage() {
     })
 
     async function onSubmit(values: z.infer<typeof formSchema>) {
-        const { name, gender, contact, address, medicalHistory, dob, patientStatus } = values
+        const { firstName, lastName, gender, contact, address, medicalHistory, dob, patientStatus } = values
         console.log(new Date(dob).toLocaleDateString())
         console.log(values)
         try {
@@ -71,7 +78,8 @@ export default function AddPatientPage() {
             const response = await fetch('/api/patients', {
                 method: 'POST',
                 body: JSON.stringify({
-                    patientName: name,
+                    firstName,
+                    lastName,
                     contactNumber: contact,
                     dob: new Date(dob).toISOString(),
                     patientStatus,
@@ -127,15 +135,31 @@ export default function AddPatientPage() {
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
                     <FormField
                         control={form.control}
-                        name="name"
+                        name="firstName"
                         render={({ field }) => (
                             <FormItem>
-                                <FormLabel>Name</FormLabel>
+                                <FormLabel>FirstName</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="John Doe" {...field} />
+                                    <Input placeholder="John" {...field} />
                                 </FormControl>
                                 <FormDescription>
-                                    Enter the patient's full name.
+                                    Enter the patient's firstname.
+                                </FormDescription>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                    <FormField
+                        control={form.control}
+                        name="lastName"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Surname</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Doe" {...field} />
+                                </FormControl>
+                                <FormDescription>
+                                    Enter the patient's surname.
                                 </FormDescription>
                                 <FormMessage />
                             </FormItem>
@@ -159,9 +183,7 @@ export default function AddPatientPage() {
 
                                                 )}
                                             >
-                                                {field.value ? (
-                                                    format(field.value, "PPP")
-                                                ) : (
+                                                {field.value ? <span>{new Date(field.value).toDateString()}</span> : (
                                                     <span>Pick a date</span>
                                                 )}
                                                 <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
