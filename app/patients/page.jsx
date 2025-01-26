@@ -64,7 +64,7 @@ export default function PatientsPage() {
                     <Link href="/patients/add">Add New Patient</Link>
                 </Button>
             </div>
-            <PaginatedTable data={data} columns={columns} itemsPerPage={10} />
+            <PaginatedTable data={data} columns={columns} itemsPerPage={2} />
         </div>
     )
 }

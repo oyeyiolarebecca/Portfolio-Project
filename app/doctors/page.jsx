@@ -93,7 +93,7 @@ export default function DoctorsPage() {
                 </Dialog>
 
             </div>
-            <PaginatedTable data={data} columns={columns} itemsPerPage={10} />
+            <PaginatedTable data={data} columns={columns} itemsPerPage={2} />
         </div>
     )
 }
