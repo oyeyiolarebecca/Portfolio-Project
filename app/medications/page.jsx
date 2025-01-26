@@ -11,9 +11,9 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import AddMedicationForm from "@/forms/AddMedication"
 
 const initialMedications = [
-    { id: 1, name: "Aspirin", dosage: "100mg", stock: 500, category: "Pain Relief", available: true },
+    { id: 1, name: "Ibuprofen", dosage: "100mg", stock: 500, category: "Pain Relief", available: true },
     { id: 2, name: "Amoxicillin", dosage: "500mg", stock: 200, category: "Antibiotic", available: true },
-    { id: 3, name: "Lisinopril", dosage: "10mg", stock: 300, category: "Blood Pressure", available: true },
+    { id: 3, name: "Valsartan", dosage: "10mg", stock: 300, category: "Blood Pressure", available: true },
     // ... more medications
 ]
 
@@ -68,7 +68,7 @@ export default function MedicationsPage() {
                     <DialogContent>
                         <DialogHeader>
                             <DialogTitle>Add Medication</DialogTitle>
-                            <DialogDescription>Fill in the details to add a new medication.</DialogDescription>
+                            <DialogDescription>Fill in the details here to add a new medication.</DialogDescription>
                         </DialogHeader>
                         <AddMedicationForm />
                     </DialogContent>
