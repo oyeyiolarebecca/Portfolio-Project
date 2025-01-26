@@ -7,9 +7,9 @@ import { Badge } from "@/components/ui/badge"
 
 // Sample events data
 const events = [
-    { date: new Date(2023, 5, 15), title: "Dr. Smith's Holiday", type: "holiday" },
-    { date: new Date(2023, 5, 18), title: "Hospital Board Meeting", type: "event" },
-    { date: new Date(2023, 5, 20), title: "John Doe's Appointment", type: "appointment" },
+    { date: new Date(2024, 5, 15), title: "Dr. Smith's Holiday", type: "holiday" },
+    { date: new Date(2024, 5, 18), title: "Hospital Board Meeting", type: "event" },
+    { date: new Date(2024, 5, 20), title: "John Doe's Appointment", type: "appointment" },
     // Add more events as needed
 ]
 
