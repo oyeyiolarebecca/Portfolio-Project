@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { usePathname } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import { ChevronDown, Users, CalendarDays, Pill, Stethoscope, ClipboardList, BarChart2, Settings, LogOut } from 'lucide-react'
 import {
     Sidebar,
@@ -62,6 +62,7 @@ const sidebarItems = [
 ]
 
 export function HospitalSidebar() {
+    const router = useRouter();
     const pathname = usePathname()
     const [openItems, setOpenItems] = useState<string[]>([])
 
@@ -143,11 +144,15 @@ export function HospitalSidebar() {
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <Link href="/login" className="flex items-center w-full">
+                        <Button 
+                            variant="ghost" 
+                            className="w-full justify-start"
+                            onClick={() => router.push("/auth/login")}
+                        >
                             <LogOut className="mr-2 h-4 w-4" />
                             Logout
-                        </Link>
-                    </SidebarMenuItem>
+                        </Button>
+                        </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarFooter>
         </Sidebar>
