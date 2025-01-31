@@ -42,7 +42,7 @@ export default function AddMedicationForm() {
                             control={form.control}
                             render={({ field }) => (
                                 <FormItem className="w-full">
-                                    <FormLabel>Dosage</FormLabel>
+                                    <FormLabel>Dose</FormLabel>
                                     <FormControl>
                                         <Input {...field} />
                                     </FormControl>

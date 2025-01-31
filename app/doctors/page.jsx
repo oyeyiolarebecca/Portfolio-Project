@@ -86,7 +86,7 @@ export default function DoctorsPage() {
                     <DialogContent>
                         <DialogHeader>
                             <DialogTitle>Add New Doctor</DialogTitle>
-                            <DialogDescription>Fill in the details to add a new doctor.</DialogDescription>
+                            <DialogDescription>Fill in the details here to add a new doctor.</DialogDescription>
                         </DialogHeader>
                         <AddDoctorForm />
                     </DialogContent>
