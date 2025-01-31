@@ -143,10 +143,10 @@ export function HospitalSidebar() {
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                     <SidebarMenuItem>
-                        <Button variant="ghost" className="w-full justify-start">
+                        <Link href="/login" className="flex items-center w-full">
                             <LogOut className="mr-2 h-4 w-4" />
                             Logout
-                        </Button>
+                        </Link>
                     </SidebarMenuItem>
                 </SidebarMenu>
             </SidebarFooter>
