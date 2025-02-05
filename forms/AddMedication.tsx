@@ -1,3 +1,4 @@
+// Add medication
 'use client';
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel } from "@/components/ui/form";
@@ -8,7 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
-export default function AddMedicationForm() {
+export default function AddMedicationForm() {  
     const form = useForm<z.infer<typeof MedicationSchema>>({
         resolver: zodResolver(MedicationSchema),
         defaultValues: {
@@ -48,9 +49,9 @@ export default function AddMedicationForm() {
                                     </FormControl>
                                 </FormItem>
                             )}
+                            //category
                         />
                     </div>
-
                     <FormField
                         name="category"
                         control={form.control}
@@ -61,7 +62,8 @@ export default function AddMedicationForm() {
                                     <Input {...field} />
                                 </FormControl>
                             </FormItem>
-                        )}
+                        )} 
+                        //stock
                     />
 
                     <div className="flex gap-4">
