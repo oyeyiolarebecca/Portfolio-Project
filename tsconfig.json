@@ -36,7 +36,7 @@
     "app/doctors/page.jsx",
     "app/appointments/page.jsx",
     "app/patients/page.jsx"
-  ],
+, "app/patients/add/page.jsx", "app/medications/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]
