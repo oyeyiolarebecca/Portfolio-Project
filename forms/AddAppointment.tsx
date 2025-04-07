@@ -23,7 +23,7 @@ import { z } from "zod"
 
 
 export default function AddAppointment() {
-
+//add appointment
     const [isSubmiting, setIsSubmiting] = useState<boolean>(false)
     const { patients }: any = usePatients()
     const { doctors }: any = useDoctors()
@@ -42,7 +42,7 @@ export default function AddAppointment() {
         mutation.mutate({ ...values })
         console.log(values)
     }
-
+//schedule appointment
     const mutation = useMutation({
         mutationFn: ScheduleAppointment,
         mutationKey: ['add-appointment'],

@@ -28,8 +28,8 @@ const fetchPatientData = async (id: string) => {
     // await new Promise(resolve => setTimeout(resolve, 1000))
     // return {
     //     id: parseInt(id),
-    //     name: "John Doe",
-    //     age: 35,
+    //     name: "John ken",
+    //     age: 30,
     //     gender: "Male",
     //     status: "Stable",
     //     image: "/placeholder-avatar.jpg",
@@ -40,7 +40,7 @@ const fetchPatientData = async (id: string) => {
     //         { date: "2022-06-20", description: "Treated for minor fracture in left arm" },
     //     ],
     //     upcomingAppointments: [
-    //         { date: "2023-07-01", time: "10:00 AM", doctor: "Dr. Sarah Johnson" },
+    //         { date: "2023-07-01", time: "10:00 AM", doctor: "Dr. Rebecca Johnson" },
     //     ]
     // }
 }

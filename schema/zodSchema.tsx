@@ -24,3 +24,11 @@ export const AppointmentSchema = z.object({
     appointmentTime: z.string({ required_error: "please choose time for appointment" }),
     appointmentStatus: z.string({ required_error: "please choose appointment status" })
 })
+
+export const MedicationSchema = z.object({
+    name: z.string().nonempty("Name is required"),
+    dosage: z.string().nonempty("Dosage is required"),
+    category: z.string().nonempty("Category is required"),
+    stock: z.number().nonnegative("Stock must be 0 or more"),
+    status: z.enum(["AVAILABLE", "OUT_OF_STOCK"]),
+});

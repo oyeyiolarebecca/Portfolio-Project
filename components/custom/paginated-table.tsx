@@ -27,7 +27,7 @@ interface PaginatedTableProps<T> {
 export function PaginatedTable<T>({
     data,
     columns,
-    itemsPerPage = 10,
+    itemsPerPage = 2,
 }: PaginatedTableProps<T>) {
     const [currentPage, setCurrentPage] = useState(1)
 

@@ -86,14 +86,14 @@ export default function DoctorsPage() {
                     <DialogContent>
                         <DialogHeader>
                             <DialogTitle>Add New Doctor</DialogTitle>
-                            <DialogDescription>Fill in the details to add a new doctor.</DialogDescription>
+                            <DialogDescription>Fill in the details here to add a new doctor.</DialogDescription>
                         </DialogHeader>
                         <AddDoctorForm />
                     </DialogContent>
                 </Dialog>
 
             </div>
-            <PaginatedTable data={data} columns={columns} itemsPerPage={10} />
+            <PaginatedTable data={data} columns={columns} itemsPerPage={2} />
         </div>
     )
 }
